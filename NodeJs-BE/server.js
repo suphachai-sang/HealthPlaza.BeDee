@@ -34,6 +34,29 @@ app.delete('/todos/:id', (req, res) => {
   res.json(deletedTodo);
 });
 
+// Technical Test : Find longest common prefix
+app.post('/findcommon', (req, res) => {
+  const { strs } = req.body;
+ 
+  function longestCommonPrefix(strs) {
+    if (strs.length === 0) return ""; 
+
+    for (let i = 0; i < strs[0].length; i++) {
+      for (let j = 1; j < strs.length; j++) {
+        if (i >= strs[j].length || strs[j][i] !== strs[0][i]) {
+        
+          return strs[0].substring(0, i);
+        }
+      }
+    }
+
+    return strs[0];
+  }
+
+  const result = longestCommonPrefix(strs);
+  res.status(200).json({ commonPrefix: result });
+});
+
 app.listen(port, () => {
   console.log("Starting node.js at port " + port);
 });

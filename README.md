@@ -9,7 +9,6 @@
 # run 
 # node server.js
 
-
 ## Get todos
 curl --location 'http://localhost:3000/todos'
 
@@ -31,3 +30,14 @@ curl --location --request PUT 'http://localhost:3000/todos/0' \
 
 ## Delete todos
 curl --location --request DELETE 'http://localhost:3000/todos/0'
+
+## Technical Test : Find longest common prefix
+curl --location 'http://localhost:3000/findcommon' \
+--header 'Content-Type: application/json' \
+--data '{
+    "strs": [
+        "flower",
+        "flow",
+        "flight"
+    ]
+}'
