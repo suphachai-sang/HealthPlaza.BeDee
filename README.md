@@ -37,7 +37,14 @@ curl --location 'http://localhost:3000/findcommon' \
 --data '{
     "strs": [
         "flower",
+        "flz",
         "flow",
-        "flight"
+        "fla",
+        "flight",
+        "flabc"
     ]
 }'
+
+start metro
+npx react-native start
+npx react-native run-android
